@@ -1,0 +1,53 @@
+Test Images Mapping
+==============================
+
+Original: ATT13833_PropertyConditionAssessment_image-20220902-141043.jpg
+New Name: _5_3633.jpg
+Class: 5
+Random Number: 3633
+------------------------------
+Original: ATT903_PropertyConditionAssessment_image-20220624-145148.jpg
+New Name: _4_8330.jpg
+Class: 4
+Random Number: 8330
+------------------------------
+Original: ATT9784_PropertyConditionAssessment_image-20220811-195442.jpg
+New Name: _2_8683.jpg
+Class: 2
+Random Number: 8683
+------------------------------
+Original: ATT8404_PropertyConditionAssessment_image-20220809-181906.jpg
+New Name: _2_6769.jpg
+Class: 2
+Random Number: 6769
+------------------------------
+Original: ATT3873_PropertyConditionAssessment_image-20220706-185058.jpg
+New Name: _3_3665.jpg
+Class: 3
+Random Number: 3665
+------------------------------
+Original: ATT2592_PropertyConditionAssessment_image-20220630-185516.jpg
+New Name: _3_3869.jpg
+Class: 3
+Random Number: 3869
+------------------------------
+Original: ATT8988_PropertyConditionAssessment_image-20220810-175227.jpg
+New Name: _2_4916.jpg
+Class: 2
+Random Number: 4916
+------------------------------
+Original: ATT13618_PropertyConditionAssessment_image-20220901-181413.jpg
+New Name: _5_5346.jpg
+Class: 5
+Random Number: 5346
+------------------------------
+Original: ATT9154_PropertyConditionAssessment_image-20220811-145606.jpg
+New Name: _2_8742.jpg
+Class: 2
+Random Number: 8742
+------------------------------
+Original: ATT9634_PropertyConditionAssessment_image-20220811-183214.jpg
+New Name: _2_7085.jpg
+Class: 2
+Random Number: 7085
+------------------------------
