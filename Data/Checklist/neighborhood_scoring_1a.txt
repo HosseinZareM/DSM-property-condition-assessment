@@ -1,0 +1,55 @@
+Healthy Home Assessment
+“Is this home showing signs of being very healthy?”
+“Very healthy”
+…
+“In-between”
+…
+“Very unhealthy”
+
+Score: 1
+VERY HEALTHY
+
+Score 2:
+HEALTHY
+HOUSE
+
+Score 3:
+IN-BETWEEN
+
+Score 4:
+SLIPPING
+
+Score 5:
+UNHEALTHY
+HOUSE
+
+This looks like:
+- “Staying on top of the details”
+- Roof, porch, windows, yard,
+landscaping, and details are all in
+strong condition.
+
+This looks like:
+- “Doing well”
+- Small attention to detail
+missing in roof, porch, windows,
+yard, landscaping or other areas
+
+This looks like:
+- “Could go either way”
+- Attention to detail in roof, porch,
+windows, yard, landscaping or
+other details missing or not
+apparent
+
+This looks like:
+- “1-2 red flags”
+- Red flags include: Porch in
+bad shape, roof in bad condition,
+landscaping missing or overgrown/
+neglected, trash, screens torn, etc.
+
+This looks like:
+- Red flags overwhelming (3+)
+
+
