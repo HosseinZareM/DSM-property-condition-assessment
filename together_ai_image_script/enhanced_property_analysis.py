@@ -10,9 +10,13 @@ import os
 import random
 from PIL import Image
 import io
+from dotenv import load_dotenv
+
+# Load environment variables from config.env
+load_dotenv('config.env')
 
 # Together AI API configuration
-API_KEY = "tgp_v1_20wpGwgQcqOZn5aaoYA_-NihgYGHUYks7i44R9AecfQ"
+API_KEY = os.getenv('TOGETHER_AI_API_KEY')
 API_URL = "https://api.together.xyz/v1/chat/completions"
 
 def get_random_property_image():

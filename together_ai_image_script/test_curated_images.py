@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 """
-Batch DSM Accuracy Test - Test 10 random images and calculate accuracy
+Test the curated test images (test_images and test_images_batch2 folders)
 """
 
 import requests
 import base64
 import json
 import os
-import random
 import csv
 import re
 from datetime import datetime
@@ -20,29 +19,49 @@ load_dotenv('config.env')
 API_KEY = os.getenv('TOGETHER_AI_API_KEY')
 API_URL = "https://api.together.xyz/v1/chat/completions"
 
-def get_random_images(count=10):
-    """Get random property images from all folders"""
-    base_path = "/home/exouser/DSM-property-condition-assessment/Data/extractedimages"
+def get_curated_test_images():
+    """Get all curated test images from both test folders"""
+    test_images = []
     
-    # Get all JPG files from all NHTyp folders
-    all_images = []
-    for folder in ["NHTyp1", "NHTyp2", "NHTyp3", "NHTyp4", "NHTyp5"]:
-        folder_path = os.path.join(base_path, folder)
-        if os.path.exists(folder_path):
-            for file in os.listdir(folder_path):
-                if file.lower().endswith('.jpg'):
-                    all_images.append({
-                        'path': os.path.join(folder_path, file),
-                        'filename': file,
-                        'folder': folder,
-                        'ground_truth': int(folder.replace('NHTyp', ''))
-                    })
+    # Test images folder
+    test_folder1 = "/home/exouser/DSM-property-condition-assessment/test_images"
+    if os.path.exists(test_folder1):
+        for file in os.listdir(test_folder1):
+            if file.lower().endswith('.jpg') and file.startswith('_'):
+                # Extract class from filename (e.g., _2_4916.jpg -> class 2)
+                parts = file.split('_')
+                if len(parts) >= 2:
+                    try:
+                        class_num = int(parts[1])
+                        test_images.append({
+                            'path': os.path.join(test_folder1, file),
+                            'filename': file,
+                            'ground_truth': class_num,
+                            'folder': 'test_images'
+                        })
+                    except ValueError:
+                        continue
     
-    if len(all_images) < count:
-        print(f"Only {len(all_images)} images available, using all of them")
-        return all_images
+    # Test images batch2 folder
+    test_folder2 = "/home/exouser/DSM-property-condition-assessment/test_images_batch2"
+    if os.path.exists(test_folder2):
+        for file in os.listdir(test_folder2):
+            if file.lower().endswith('.jpg') and file.startswith('_'):
+                # Extract class from filename (e.g., _2_4916.jpg -> class 2)
+                parts = file.split('_')
+                if len(parts) >= 2:
+                    try:
+                        class_num = int(parts[1])
+                        test_images.append({
+                            'path': os.path.join(test_folder2, file),
+                            'filename': file,
+                            'ground_truth': class_num,
+                            'folder': 'test_images_batch2'
+                        })
+                    except ValueError:
+                        continue
     
-    return random.sample(all_images, count)
+    return test_images
 
 def encode_image_to_base64(image_path):
     """Convert image file to base64 string"""
@@ -144,20 +163,20 @@ JUSTIFICATION: [Brief explanation]"""
 
 def main():
     """Main function"""
-    print("🏠 DSM Batch Accuracy Test - 10 Random Images")
+    print("🏠 DSM Curated Test Images Analysis")
     print("=" * 50)
     
-    # Get 10 random images
-    images = get_random_images(10)
+    # Get curated test images
+    images = get_curated_test_images()
     
     if not images:
-        print("❌ No property images found!")
+        print("❌ No curated test images found!")
         return
     
     results = []
     correct_predictions = 0
     
-    print(f"Testing {len(images)} images...")
+    print(f"Testing {len(images)} curated images...")
     print("-" * 50)
     
     for i, image_info in enumerate(images, 1):
@@ -217,7 +236,7 @@ def main():
     accuracy = (correct_predictions / total_tests) * 100 if total_tests > 0 else 0
     
     # Save results to CSV
-    csv_filename = f"dsm_accuracy_test_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
+    csv_filename = f"curated_test_images_{datetime.now().strftime('%Y%m%d_%H%M%S')}.csv"
     csv_path = f"/home/exouser/DSM-property-condition-assessment/together_ai_image_script/logs/{csv_filename}"
     
     with open(csv_path, 'w', newline='', encoding='utf-8') as csvfile:
@@ -230,7 +249,7 @@ def main():
     
     # Print summary
     print("\n" + "=" * 50)
-    print("📊 ACCURACY TEST RESULTS")
+    print("📊 CURATED TEST IMAGES RESULTS")
     print("=" * 50)
     print(f"Total Images Tested: {total_tests}")
     print(f"Correct Predictions: {correct_predictions}")

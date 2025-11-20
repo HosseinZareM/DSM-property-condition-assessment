@@ -30,7 +30,7 @@ class OpenAIVLM(BaseVLM):
                         ],
                     }
                 ],
-                max_tokens=300,
+                max_tokens=2000,  # Increased for complete subcategory scores
             )
             return response.choices[0].message.content
         except Exception as e:
