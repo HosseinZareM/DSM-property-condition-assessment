@@ -1,2 +1,47 @@
 extractedimages/
 extractedimages.zip
+
+# Data directories (contain images and annotations)
+data/
+Data/
+
+# Virtual Environment
+venv/
+.venv/
+env/
+.env/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# Environment variables
+config.env
+.env
+*.env
+
+# Logs
+*.log
+logs/
+*.csv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
